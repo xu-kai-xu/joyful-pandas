@@ -140,7 +140,7 @@ Ex1：口袋妖怪数据集
     L_full = [i+' '+j if i!=j else i for i in df['Type 1'
              ].unique() for j in df['Type 1'].unique()]
     L_part = [i+' '+j if not isinstance(j, float) else i for i, j in zip(
-              df['Type 1'], df['Type 2'])]
+              attr_dup['Type 1'], attr_dup['Type 2'])]
     res = set(L_full).difference(set(L_part))
     len(res) # 太多，不打印了
 
@@ -584,7 +584,7 @@ Ex2：用回归模型解决分类问题
     stack_list = []
     for col in df_dummies.columns:
         clf = KNeighborsRegressor(n_neighbors=6)
-        clf.fit(df.iloc[:,:2], df_dummies[col])
+        clf.fit(df.iloc[:,:2].values, df_dummies[col].values)
         res = clf.predict([[0.8, -0.2]]).reshape(-1,1)
         stack_list.append(res)
     code_res = pd.Series(np.hstack(stack_list).argmax(1))
@@ -606,8 +606,8 @@ Ex2：用回归模型解决分类问题
     stack_list = []
     for col in df_dummies.columns:
         clf = KNeighborsRegressor(n_neighbors=6)
-        clf.fit(X_train.iloc[:,:-1], df_dummies[col])
-        res = clf.predict(X_test.iloc[:,:-1]).reshape(-1,1)
+        clf.fit(X_train.iloc[:,:-1].values, df_dummies[col].values)
+        res = clf.predict(X_test.iloc[:,:-1].values).reshape(-1,1)
         stack_list.append(res)
     code_res = pd.Series(np.hstack(stack_list).argmax(1))
     cat_res = code_res.replace(dict(zip(list(
@@ -833,11 +833,32 @@ Ex1：太阳辐射数据集
 
 (c)
 
+.. code-block:: python
+
+    # 非常慢
+    my_dt = df.index.shift(freq='-6H')
+    int_loc = [df.index.get_indexer([i], method='nearest') for i in my_dt]
+    int_loc = np.array(int_loc).reshape(-1)
+    res = df.Radiation.iloc[int_loc]
+    res.index = df.index
+    res.tail(3)
+
 .. ipython:: python
 
-    my_dt = df.index.shift(freq='-6H')
-    int_loc = [df.index.get_loc(i, method='nearest') for i in my_dt]
-    res = df.Radiation.iloc[int_loc]
+    # 纸质版上介绍了merge_asof，性能差距可以达到3-4个数量级
+    target = pd.DataFrame(
+        {
+            "Time": df.index.shift(freq='-6H'),
+            "Datetime": df.index,
+        }
+    )
+    res = pd.merge_asof(
+        target,
+        df.reset_index().rename(columns={"Datetime": "Time"}),
+        left_on="Time",
+        right_on="Time",
+        direction="nearest"
+    ).set_index("Datetime").Radiation
     res.tail(3)
 
 Ex2：水果销量数据集

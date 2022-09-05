@@ -1,15 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第三章 索引 &#8212; Joyful Pandas 1.0 documentation</title>
-    
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
+    <title>第三章 索引 &#8212; Joyful Pandas 1.0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -17,334 +24,383 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="第四章 分组" href="ch4.html" />
     <link rel="prev" title="第二章 pandas基础" href="ch2.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
-
-    
-    <a class="navbar-brand" href="../index.html">
-      <img src="../_static/finallogo1.svg" class="logo" alt="logo">
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Home.html">Home</a>
-        </li>
-        
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">Content</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Author.html">Author</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Datawhale.html">Datawhale</a>
-        </li>
-        
-        
-        <li class="nav-item">
-            <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
-        </li>
-        
-      </ul>
-
-
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
       
 
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
-      </ul>
     </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/finallogo1.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/finallogo1.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Home.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Content
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Author.html">
+  Author
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90.html">
+  pandas数据处理与分析
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E8%A1%A5%E5%85%85%E4%B9%A0%E9%A2%98.html">
+  补充习题
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
 
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form>
-
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-  
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   第一章 预备知识
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   第二章 pandas基础
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第三章 索引
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   第四章 分组
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   第五章 变形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   第六章 连接
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   第七章 缺失数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch8.html">
+   第八章 文本数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   第九章 分类数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   第十章 时序数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">
+   参考答案
+  </a>
+ </li>
+</ul>
 
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-        
-          
-              <li class="">
-                  <a href="Preface.html">Preface</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch1.html">第一章 预备知识</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch2.html">第二章 pandas基础</a>
-              </li>
-          
-        
-          
-              <li class="active">
-                  <a href="">第三章 索引</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch4.html">第四章 分组</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch5.html">第五章 变形</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch6.html">第六章 连接</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch7.html">第七章 缺失数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch8.html">第八章 文本数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch9.html">第九章 分类数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch10.html">第十章 时序数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">参考答案</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-    </ul>
-
+  </div>
 </nav>
-          </div>
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-              
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id2" class="nav-link">一、索引器</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id3" class="nav-link">1. 表的列索引</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id4" class="nav-link">2. 序列的行索引</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#loc" class="nav-link">3. loc索引器</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#iloc" class="nav-link">4. iloc索引器</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#query" class="nav-link">5. query方法</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id5" class="nav-link">6. 随机抽样</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id6" class="nav-link">二、多级索引</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id7" class="nav-link">1. 多级索引及其表的结构</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id8" class="nav-link">2. 多级索引中的loc索引器</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#indexslice" class="nav-link">3. IndexSlice对象</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id9" class="nav-link">4. 多级索引的构造</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id10" class="nav-link">三、索引的常用方法</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id11" class="nav-link">1. 索引层的交换和删除</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id12" class="nav-link">2. 索引属性的修改</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id13" class="nav-link">3. 索引的设置与重置</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id14" class="nav-link">4. 索引的变形</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id15" class="nav-link">四、索引运算</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id16" class="nav-link">1. 集合的运算法则</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id17" class="nav-link">2. 一般的索引运算</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id18" class="nav-link">五、练习</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex1" class="nav-link">Ex1：公司员工数据集</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex2" class="nav-link">Ex2：巧克力数据集</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   一、索引器
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1. 表的列索引
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     2. 序列的行索引
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loc">
+     3. loc索引器
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iloc">
+     4. iloc索引器
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#query">
+     5. query方法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     6. 随机抽样
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   二、多级索引
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     1. 多级索引及其表的结构
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2. 多级索引中的loc索引器
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexslice">
+     3. IndexSlice对象
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     4. 多级索引的构造
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   三、索引的常用方法
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     1. 索引层的交换和删除
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     2. 索引属性的修改
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     3. 索引的设置与重置
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id14">
+     4. 索引的变形
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id15">
+   四、索引运算
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     1. 集合的运算法则
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     2. 一般的索引运算
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   五、练习
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex1">
+     Ex1：公司员工数据集
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex2">
+     Ex2：巧克力数据集
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
 
 
-              
-          </div>
           
-
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
-  <div class="section" id="id1">
-<h1>第三章 索引<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <section id="id1">
+<h1>第三章 索引<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<div class="section" id="id2">
-<h2>一、索引器<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1. 表的列索引<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h2>一、索引器<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>1. 表的列索引<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>列索引是最常见的索引形式，一般通过 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 来实现。通过 <code class="docutils literal notranslate"><span class="pre">[列名]</span></code> 可以从 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 中取出相应的列，返回值为 <code class="docutils literal notranslate"><span class="pre">Series</span></code> ，例如从表中取出姓名一列：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/learn_pandas.csv&#39;</span><span class="p">,</span>
 <span class="gp">   ...: </span>                 <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Grade&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span>
@@ -383,9 +439,9 @@
 <span class="go">Name: Name, dtype: object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>2. 序列的行索引<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>2. 序列的行索引<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>【a】以字符串为索引的 <code class="docutils literal notranslate"><span class="pre">Series</span></code></p>
 <p>如果取出单个索引的对应元素，则可以使用 <code class="docutils literal notranslate"><span class="pre">[item]</span></code> ，若 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 只有单个值对应，则返回这个标量值，如果有多个值对应，则返回一个 <code class="docutils literal notranslate"><span class="pre">Series</span></code>：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [7]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
@@ -475,9 +531,9 @@
 <div><p>如果不想陷入麻烦，那么请不要把纯浮点以及任何混合类型（字符串、整数、浮点类型等的混合）作为索引，否则可能会在具体的操作时报错或者返回非预期的结果，并且在实际的数据分析中也不存在这样做的动机。</p>
 </div></blockquote>
 </div>
-</div>
-<div class="section" id="loc">
-<h3>3. loc索引器<a class="headerlink" href="#loc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="loc">
+<h3>3. loc索引器<a class="headerlink" href="#loc" title="Permalink to this heading">#</a></h3>
 <p>前面讲到了对 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 的列进行选取，下面要讨论其行的选取。对于表而言，有两种索引器，一种是基于 <span class="red">元素</span> 的 <code class="docutils literal notranslate"><span class="pre">loc</span></code> 索引器，另一种是基于 <span class="red">位置</span> 的 <code class="docutils literal notranslate"><span class="pre">iloc</span></code> 索引器。</p>
 <p><code class="docutils literal notranslate"><span class="pre">loc</span></code> 索引器的一般形式是 <code class="docutils literal notranslate"><span class="pre">loc[*,</span> <span class="pre">*]</span></code> ，其中第一个 <code class="docutils literal notranslate"><span class="pre">*</span></code> 代表行的选择，第二个 <code class="docutils literal notranslate"><span class="pre">*</span></code> 代表列的选择，如果省略第二个位置写作 <code class="docutils literal notranslate"><span class="pre">loc[*]</span></code> ，这个 <code class="docutils literal notranslate"><span class="pre">*</span></code> 是指行的筛选。其中， <code class="docutils literal notranslate"><span class="pre">*</span></code> 的位置一共有五类合法对象，分别是：单个元素、元素列表、元素切片、布尔列表以及函数，下面将依次说明。</p>
 <p>为了演示相应操作，先利用 <code class="docutils literal notranslate"><span class="pre">set_index</span></code> 方法把 <code class="docutils literal notranslate"><span class="pre">Name</span></code> 列设为索引，关于该函数的其他用法将在多级索引一章介绍。</p>
@@ -720,9 +776,9 @@
 <span class="go">2 -1  1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="iloc">
-<h3>4. iloc索引器<a class="headerlink" href="#iloc" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="iloc">
+<h3>4. iloc索引器<a class="headerlink" href="#iloc" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">iloc</span></code> 的使用与 <code class="docutils literal notranslate"><span class="pre">loc</span></code> 完全类似，只不过是针对位置进行筛选，在相应的 <code class="docutils literal notranslate"><span class="pre">*</span></code> 位置处一共也有五类合法对象，分别是：整数、整数列表、整数切片、布尔列表以及函数，函数的返回值必须是前面的四类合法对象中的一个，其输入同样也为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 本身。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [54]: </span><span class="n">df_demo</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 第二行第二列</span>
 <span class="gh">Out[54]: </span><span class="go">&#39;Freshman&#39;</span>
@@ -776,9 +832,9 @@
 <span class="go">Name: School, dtype: object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="query">
-<h3>5. query方法<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="query">
+<h3>5. query方法<a class="headerlink" href="#query" title="Permalink to this heading">#</a></h3>
 <p>在 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中，支持把字符串形式的查询表达式传入 <code class="docutils literal notranslate"><span class="pre">query</span></code> 方法来查询数据，其表达式的执行结果必须返回布尔列表。在进行复杂索引时，由于这种检索方式无需像普通方法一样重复使用 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 的名字来引用列名，一般而言会使代码长度在不降低可读性的前提下有所减少。</p>
 <p>例如，将 <code class="docutils literal notranslate"><span class="pre">loc</span></code> 一节中的复合条件查询例子可以如下改写：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [61]: </span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;((School == &quot;Fudan University&quot;)&amp;&#39;</span>
@@ -813,7 +869,7 @@
 <div><p>对于含有空格的列名，需要使用 <code class="docutils literal notranslate"><span class="pre">`col</span> <span class="pre">name`</span></code> 的方式进行引用。</p>
 </div></blockquote>
 </div>
-<p>同时，在 <code class="docutils literal notranslate"><span class="pre">query</span></code> 中还注册了若干英语的字面用法，帮助提高可读性，例如： <code class="docutils literal notranslate"><span class="pre">or,</span> <span class="pre">and,</span> <span class="pre">or,</span> <span class="pre">is</span> <span class="pre">in,</span> <span class="pre">not</span> <span class="pre">in</span></code> 。例如，筛选出男生中不是大一大二的学生：</p>
+<p>同时，在 <code class="docutils literal notranslate"><span class="pre">query</span></code> 中还注册了若干英语的字面用法，帮助提高可读性，例如： <code class="docutils literal notranslate"><span class="pre">or,</span> <span class="pre">and,</span> <span class="pre">or,</span> <span class="pre">in,</span> <span class="pre">not</span> <span class="pre">in</span></code> 。例如，筛选出男生中不是大一大二的学生：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [63]: </span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(Grade not in [&quot;Freshman&quot;, &quot;Sophomore&quot;]) and&#39;</span>
 <span class="gp">   ....: </span>         <span class="s1">&#39;(Gender == &quot;Male&quot;)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gp">   ....: </span>
@@ -826,7 +882,7 @@
 <span class="go">21  Shanghai Jiao Tong University  Senior  Xiaopeng Shen   Male    62.0      NaN</span>
 </pre></div>
 </div>
-<p>此外，在字符串中出现与列表的比较时， <code class="docutils literal notranslate"><span class="pre">==</span></code> 和 <code class="docutils literal notranslate"><span class="pre">!=</span></code> 分别表示元素出现在列表和没有出现在列表，等价于 <code class="docutils literal notranslate"><span class="pre">is</span> <span class="pre">in</span></code> 和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>，例如查询所有大三和大四的学生：</p>
+<p>此外，在字符串中出现与列表的比较时， <code class="docutils literal notranslate"><span class="pre">==</span></code> 和 <code class="docutils literal notranslate"><span class="pre">!=</span></code> 分别表示元素出现在列表和没有出现在列表，等价于 <code class="docutils literal notranslate"><span class="pre">in</span></code> 和 <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>，例如查询所有大三和大四的学生：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [64]: </span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Grade == [&quot;Junior&quot;, &quot;Senior&quot;]&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[64]: </span><span class="go"></span>
 <span class="go">                           School   Grade           Name  Gender  Weight Transfer</span>
@@ -840,7 +896,7 @@
 <p>对于 <code class="docutils literal notranslate"><span class="pre">query</span></code> 中的字符串，如果要引用外部变量，只需在变量名前加 <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> 符号。例如，取出体重位于70kg到80kg之间的学生：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [65]: </span><span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span><span class="mi">70</span><span class="p">,</span> <span class="mi">80</span>
 
-<span class="gp">In [66]: </span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;Weight.between(@low, @high)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="gp">In [66]: </span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;(Weight &gt;= @low) &amp; (Weight &lt;= @high)&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[66]: </span><span class="go"></span>
 <span class="go">                           School      Grade            Name Gender  Weight Transfer</span>
 <span class="go">1               Peking University   Freshman  Changqiang You   Male    70.0        N</span>
@@ -850,9 +906,9 @@
 <span class="go">35              Peking University   Freshman      Gaoli Zhao   Male    78.0        N</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id5">
-<h3>6. 随机抽样<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3>6. 随机抽样<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>如果把 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 的每一行看作一个样本，或把每一列看作一个特征，再把整个 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 看作总体，想要对样本或特征进行随机抽样就可以用 <code class="docutils literal notranslate"><span class="pre">sample</span></code> 函数。有时在拿到大型数据集后，想要对统计特征进行计算来了解数据的大致分布，但是这很费时间。同时，由于许多统计特征在等概率不放回的简单随机抽样条件下，是总体统计特征的无偏估计，比如样本均值和总体均值，那么就可以先从整张表中抽出一部分来做近似估计。</p>
 <p><code class="docutils literal notranslate"><span class="pre">sample</span></code> 函数中的主要参数为 <code class="docutils literal notranslate"><span class="pre">n,</span> <span class="pre">axis,</span> <span class="pre">frac,</span> <span class="pre">replace,</span> <span class="pre">weights</span></code> ，前三个分别是指抽样数量、抽样的方向（0为行、1为列）和抽样比例（0.3则为从总体中抽出30%的样本）。</p>
 <p><code class="docutils literal notranslate"><span class="pre">replace</span></code> 和 <code class="docutils literal notranslate"><span class="pre">weights</span></code> 分别是指是否放回和每个样本的抽样相对概率，当 <code class="docutils literal notranslate"><span class="pre">replace</span> <span class="pre">=</span> <span class="pre">True</span></code> 则表示有放回抽样。例如，对下面构造的 <code class="docutils literal notranslate"><span class="pre">df_sample</span></code> 以 <code class="docutils literal notranslate"><span class="pre">value</span></code> 值的相对大小为抽样概率进行有放回抽样，抽样数量为3。</p>
@@ -877,12 +933,12 @@
 <span class="go">4  e     90</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>二、多级索引<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>1. 多级索引及其表的结构<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>二、多级索引<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>1. 多级索引及其表的结构<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>为了更加清晰地说明具有多级索引的 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 结构，下面新构造一张表，读者可以忽略这里的构造方法，它们将会在第4小节被更详细地讲解。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [70]: </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -945,9 +1001,9 @@
 </pre></div>
 </div>
 <p>但对于索引而言，无论是单层还是多层，用户都无法通过 <code class="docutils literal notranslate"><span class="pre">index_obj[0]</span> <span class="pre">=</span> <span class="pre">item</span></code> 的方式来修改元素，也不能通过 <code class="docutils literal notranslate"><span class="pre">index_name[0]</span> <span class="pre">=</span> <span class="pre">new_name</span></code> 的方式来修改名字，关于如何修改这些属性的话题将在第三节被讨论。</p>
-</div>
-<div class="section" id="id8">
-<h3>2. 多级索引中的loc索引器<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>2. 多级索引中的loc索引器<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>熟悉了结构后，现在回到原表，将学校和年级设为索引，此时的行为多级索引，列为单级索引，由于默认状态的列索引不含名字，因此对应于刚刚图中 <code class="docutils literal notranslate"><span class="pre">Indicator</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Grade</span></code> 的索引名位置是空缺的。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [80]: </span><span class="n">df_multi</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Grade&#39;</span><span class="p">])</span>
 
@@ -1112,9 +1168,9 @@
 <span class="gh">Out[102]: </span><span class="go">(16, 4)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="indexslice">
-<h3>3. IndexSlice对象<a class="headerlink" href="#indexslice" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="indexslice">
+<h3>3. IndexSlice对象<a class="headerlink" href="#indexslice" title="Permalink to this heading">#</a></h3>
 <p>前面介绍的方法，即使在索引不重复的时候，也只能对元组整体进行切片，而不能对每层进行切片，也不允许将切片和布尔列表混合使用，引入 <code class="docutils literal notranslate"><span class="pre">IndexSlice</span></code> 对象就能解决这个问题。 <code class="docutils literal notranslate"><span class="pre">Slice</span></code> 对象一共有两种形式，第一种为 <code class="docutils literal notranslate"><span class="pre">loc[idx[*,*]]</span></code> 型，第二种为 <code class="docutils literal notranslate"><span class="pre">loc[idx[*,*],idx[*,*]]</span></code> 型，下面将进行介绍。为了方便演示，下面构造一个 <span class="red">索引不重复的</span> <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> ：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [103]: </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -1196,9 +1252,9 @@
 <span class="gh">Out[115]: </span><span class="go">KeyError(&lt;function __main__.&lt;lambda&gt;(x)&gt;)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>4. 多级索引的构造<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>4. 多级索引的构造<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>前面提到了多级索引表的结构和切片，那么除了使用 <code class="docutils literal notranslate"><span class="pre">set_index</span></code> 之外，如何自己构造多级索引呢？常用的有 <code class="docutils literal notranslate"><span class="pre">from_tuples,</span> <span class="pre">from_arrays,</span> <span class="pre">from_product</span></code> 三种方法，它们都是 <code class="docutils literal notranslate"><span class="pre">pd.MultiIndex</span></code> 对象下的函数。</p>
 <p><code class="docutils literal notranslate"><span class="pre">from_tuples</span></code> 指根据传入由元组组成的列表进行构造：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [116]: </span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">),(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">),(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">),(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">)]</span>
@@ -1241,12 +1297,12 @@
 <span class="go">           names=[&#39;First&#39;, &#39;Second&#39;])</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>三、索引的常用方法<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>1. 索引层的交换和删除<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id10">
+<h2>三、索引的常用方法<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3>1. 索引层的交换和删除<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>为了方便理解交换的过程，这里构造一个三级索引的例子：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [123]: </span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -1346,9 +1402,9 @@
 <span class="go">beta    2   5   9  -9   5  -6   3   1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>2. 索引属性的修改<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id12">
+<h3>2. 索引属性的修改<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>通过 <code class="docutils literal notranslate"><span class="pre">rename_axis</span></code> 可以对索引层的名字进行修改，常用的修改方式是传入字典的映射：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [134]: </span><span class="n">df_ex</span><span class="o">.</span><span class="n">rename_axis</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Upper&#39;</span><span class="p">:</span><span class="s1">&#39;Changed_row&#39;</span><span class="p">},</span>
 <span class="gp">   .....: </span>                  <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Other&#39;</span><span class="p">:</span><span class="s1">&#39;Changed_Col&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -1425,7 +1481,7 @@
 </pre></div>
 </div>
 <p>若想要对某个位置的元素进行修改，在单层索引时容易实现，即先取出索引的 <code class="docutils literal notranslate"><span class="pre">values</span></code> 属性，再给对得到的列表进行修改，最后再对 <code class="docutils literal notranslate"><span class="pre">index</span></code> 对象重新赋值。但是如果是多级索引的话就有些麻烦，一个解决的方案是先把某一层索引临时转为表的元素，然后再进行修改，最后重新设定为索引，下面一节将介绍这些操作。</p>
-<p>另外一个需要介绍的函数是 <code class="docutils literal notranslate"><span class="pre">map</span></code> ，它是定义在 <code class="docutils literal notranslate"><span class="pre">Index</span></code> 上的方法，与前面 <code class="docutils literal notranslate"><span class="pre">rename</span></code> 方法中层的函数式用法是类似的，只不过它传入的不是层的标量值，而是直接传入索引的元组，这为用户进行跨层的修改提供了遍历。例如，可以等价地写出上面的字符串转大写的操作：</p>
+<p>另外一个需要介绍的函数是 <code class="docutils literal notranslate"><span class="pre">map</span></code> ，它是定义在 <code class="docutils literal notranslate"><span class="pre">Index</span></code> 上的方法，与前面 <code class="docutils literal notranslate"><span class="pre">rename</span></code> 方法中层的函数式用法是类似的，只不过它传入的不是层的标量值，而是直接传入索引的元组，这为用户进行跨层的修改提供了便利。例如，可以等价地写出上面的字符串转大写的操作：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [139]: </span><span class="n">df_temp</span> <span class="o">=</span> <span class="n">df_ex</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="gp">In [140]: </span><span class="n">new_idx</span> <span class="o">=</span> <span class="n">df_temp</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
@@ -1487,9 +1543,9 @@
 <span class="go">B a alpha   0  -9   1  -6   2   9  -7  -9</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id13">
-<h3>3. 索引的设置与重置<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id13">
+<h3>3. 索引的设置与重置<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>为了说明本节的函数，下面构造一个新表：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [150]: </span><span class="n">df_new</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;aacd&#39;</span><span class="p">),</span>
 <span class="gp">   .....: </span>                       <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;PQRT&#39;</span><span class="p">),</span>
@@ -1581,9 +1637,9 @@
 <span class="go">3  d  Z  T  4</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id14">
-<h3>4. 索引的变形<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id14">
+<h3>4. 索引的变形<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>在某些场合下，需要对索引做一些扩充或者剔除，更具体地要求是给定一个新的索引，把原表中相应的索引对应元素填充到新索引构成的表中。例如，下面的表中给出了员工信息，需要重新制作一张新的表，要求增加一名员工的同时去掉身高列并增加性别列：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [161]: </span><span class="n">df_reindex</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;Weight&quot;</span><span class="p">:[</span><span class="mi">60</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">80</span><span class="p">],</span>
 <span class="gp">   .....: </span>                           <span class="s2">&quot;Height&quot;</span><span class="p">:[</span><span class="mi">176</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">179</span><span class="p">]},</span>
@@ -1623,12 +1679,12 @@
 <span class="go">1004     NaN     NaN</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id15">
-<h2>四、索引运算<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id16">
-<h3>1. 集合的运算法则<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id15">
+<h2>四、索引运算<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<section id="id16">
+<h3>1. 集合的运算法则<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>经常会有一种利用集合运算来取出符合条件行的需求，例如有两张表 <code class="docutils literal notranslate"><span class="pre">A</span></code> 和 <code class="docutils literal notranslate"><span class="pre">B</span></code> ，它们的索引都是员工编号，现在需要筛选出两表索引交集的所有员工信息，此时通过 <code class="docutils literal notranslate"><span class="pre">Index</span></code> 上的运算操作就很容易实现。</p>
 <p>不过在此之前，不妨先复习一下常见的四种集合运算：</p>
 <div class="math notranslate nohighlight">
@@ -1640,9 +1696,9 @@ S_A.union(S_B) &amp;= \rm S_A \cup S_B \Leftrightarrow \rm \{x|x\in S_A\, or\, x
 S_A.difference(S_B) &amp;= \rm S_A - S_B \Leftrightarrow \rm \{x|x\in S_A\, and\, x\notin S_B\}\\
 \rm
 S_A.symmetric\_difference(S_B) &amp;= \rm S_A\triangle S_B\Leftrightarrow \rm \{x|x\in S_A\cup S_B - S_A\cap S_B\}\end{split}\]</div>
-</div>
-<div class="section" id="id17">
-<h3>2. 一般的索引运算<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id17">
+<h3>2. 一般的索引运算<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>由于集合的元素是互异的，但是索引中可能有相同的元素，先用 <code class="docutils literal notranslate"><span class="pre">unique</span></code> 去重后再进行运算。下面构造两张最为简单的示例表进行演示：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [166]: </span><span class="n">df_set_1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]],</span>
 <span class="gp">   .....: </span>                        <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">],</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;id1&#39;</span><span class="p">))</span>
@@ -1692,12 +1748,12 @@ S_A.symmetric\_difference(S_B) &amp;= \rm S_A\triangle S_B\Leftrightarrow \rm \{
 <span class="go">1   b  1  2</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id18">
-<h2>五、练习<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ex1">
-<h3>Ex1：公司员工数据集<a class="headerlink" href="#ex1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id18">
+<h2>五、练习<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<section id="ex1">
+<h3>Ex1：公司员工数据集<a class="headerlink" href="#ex1" title="Permalink to this heading">#</a></h3>
 <p>现有一份公司员工数据集：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [178]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/company.csv&#39;</span><span class="p">)</span>
 
@@ -1723,9 +1779,9 @@ S_A.symmetric\_difference(S_B) &amp;= \rm S_A\triangle S_B\Leftrightarrow \rm \{
 <li><p>修改索引名为原表名称</p></li>
 <li><p>恢复默认索引并将列保持为原表的相对位置</p></li>
 </ul>
-</div>
-<div class="section" id="ex2">
-<h3>Ex2：巧克力数据集<a class="headerlink" href="#ex2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ex2">
+<h3>Ex2：巧克力数据集<a class="headerlink" href="#ex2" title="Permalink to this heading">#</a></h3>
 <p>现有一份关于巧克力评价的数据集：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [180]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/chocolate.csv&#39;</span><span class="p">)</span>
 
@@ -1742,31 +1798,40 @@ S_A.symmetric\_difference(S_B) &amp;= \rm S_A\triangle S_B\Leftrightarrow \rm \{
 <li><p>巧克力 <code class="docutils literal notranslate"><span class="pre">Rating</span></code> 评分为1至5，每0.25分一档，请选出2.75分及以下且可可含量 <code class="docutils literal notranslate"><span class="pre">Cocoa</span> <span class="pre">Percent</span></code> 高于中位数的样本。</p></li>
 <li><p>将 <code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Date</span></code> 和 <code class="docutils literal notranslate"><span class="pre">Company</span> <span class="pre">Location</span></code> 设为索引后，选出 <code class="docutils literal notranslate"><span class="pre">Review</span> <span class="pre">Date</span></code> 在2012年之后且 <code class="docutils literal notranslate"><span class="pre">Company</span> <span class="pre">Location</span></code> 不属于 <code class="docutils literal notranslate"><span class="pre">France,</span> <span class="pre">Canada,</span> <span class="pre">Amsterdam,</span> <span class="pre">Belgium</span></code> 的样本。</p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
-              </div>
+              </article>
               
+
               
-          </main>
+          </div>
           
-
       </div>
     </div>
 
-    
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-
-    <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    <p>
-          &copy; Copyright 2020, Datawhale, 耿远昊.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020-2022, Datawhale, 耿远昊.<br>
+</p>
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

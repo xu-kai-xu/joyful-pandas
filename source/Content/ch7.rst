@@ -372,7 +372,7 @@ Ex2：用回归模型解决分类问题
 
     from sklearn.neighbors import KNeighborsClassifier
     clf = KNeighborsClassifier(n_neighbors=6)
-    clf.fit(df.iloc[:,:2], df.Color)
+    clf.fit(df.iloc[:,:2].values, df.Color.values)
     clf.predict([[0.8, -0.2]])
 
 1. 对于回归问题而言，需要得到的是一个具体的数值，因此预测值由最近的 :math:`n` 个样本对应的平均值获得。请把上面的这个分类问题转化为回归问题，仅使用 ``KNeighborsRegressor`` 来完成上述的 ``KNeighborsClassifier`` 功能。

@@ -1,15 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第四章 分组 &#8212; Joyful Pandas 1.0 documentation</title>
-    
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
+    <title>第四章 分组 &#8212; Joyful Pandas 1.0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -17,310 +24,353 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="第五章 变形" href="ch5.html" />
     <link rel="prev" title="第三章 索引" href="ch3.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
-
-    
-    <a class="navbar-brand" href="../index.html">
-      <img src="../_static/finallogo1.svg" class="logo" alt="logo">
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Home.html">Home</a>
-        </li>
-        
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">Content</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Author.html">Author</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Datawhale.html">Datawhale</a>
-        </li>
-        
-        
-        <li class="nav-item">
-            <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
-        </li>
-        
-      </ul>
-
-
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
       
 
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
-      </ul>
     </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/finallogo1.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/finallogo1.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Home.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Content
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Author.html">
+  Author
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90.html">
+  pandas数据处理与分析
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E8%A1%A5%E5%85%85%E4%B9%A0%E9%A2%98.html">
+  补充习题
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
 
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form>
-
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-  
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   第一章 预备知识
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   第二章 pandas基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   第三章 索引
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第四章 分组
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   第五章 变形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   第六章 连接
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   第七章 缺失数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch8.html">
+   第八章 文本数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   第九章 分类数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   第十章 时序数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">
+   参考答案
+  </a>
+ </li>
+</ul>
 
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-        
-          
-              <li class="">
-                  <a href="Preface.html">Preface</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch1.html">第一章 预备知识</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch2.html">第二章 pandas基础</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch3.html">第三章 索引</a>
-              </li>
-          
-        
-          
-              <li class="active">
-                  <a href="">第四章 分组</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch5.html">第五章 变形</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch6.html">第六章 连接</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch7.html">第七章 缺失数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch8.html">第八章 文本数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch9.html">第九章 分类数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch10.html">第十章 时序数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">参考答案</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-    </ul>
-
+  </div>
 </nav>
-          </div>
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-              
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id2" class="nav-link">一、分组模式及其对象</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id3" class="nav-link">1. 分组的一般模式</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id4" class="nav-link">2. 分组依据的本质</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#groupby" class="nav-link">3. Groupby对象</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id5" class="nav-link">4. 分组的三大操作</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id6" class="nav-link">二、聚合函数</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id7" class="nav-link">1. 内置聚合函数</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#agg" class="nav-link">2. agg方法</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id8" class="nav-link">三、变换和过滤</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#transform" class="nav-link">1. 变换函数与transform方法</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id9" class="nav-link">2. 组索引与过滤</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id10" class="nav-link">四、跨列分组</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#apply" class="nav-link">1. apply的引入</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id11" class="nav-link">2. apply的使用</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id12" class="nav-link">五、练习</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex1" class="nav-link">Ex1：汽车数据集</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex2-transform" class="nav-link">Ex2：实现transform函数</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   一、分组模式及其对象
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     1. 分组的一般模式
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     2. 分组依据的本质
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#groupby">
+     3. Groupby对象
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4. 分组的三大操作
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   二、聚合函数
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     1. 内置聚合函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#agg">
+     2. agg方法
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   三、变换和过滤
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform">
+     1. 变换函数与transform方法
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     2. 组索引与过滤
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   四、跨列分组
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply">
+     1. apply的引入
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     2. apply的使用
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id12">
+   五、练习
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex1">
+     Ex1：汽车数据集
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex2-transform">
+     Ex2：实现transform函数
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
 
 
-              
-          </div>
           
-
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
-  <div class="section" id="id1">
-<h1>第四章 分组<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <section id="id1">
+<h1>第四章 分组<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<div class="section" id="id2">
-<h2>一、分组模式及其对象<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>1. 分组的一般模式<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h2>一、分组模式及其对象<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>1. 分组的一般模式<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>分组操作在日常生活中使用极其广泛，例如：</p>
 <ul class="simple">
 <li><p>依据 <span class="red">性别</span> 分组，统计全国人口 <span class="green">寿命</span> 的 <span class="blue">平均值</span></p></li>
@@ -346,9 +396,9 @@
 <span class="go">Name: Height, dtype: float64</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id4">
-<h3>2. 分组依据的本质<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id4">
+<h3>2. 分组依据的本质<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>前面提到的若干例子都是以单一维度进行分组的，比如根据性别，如果现在需要根据多个维度进行分组，该如何做？事实上，只需在 <code class="docutils literal notranslate"><span class="pre">groupby</span></code> 中传入相应列名构成的列表即可。例如，现希望根据学校和性别进行分组，统计身高的均值就可以如下写出：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">])[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="gh">Out[5]: </span><span class="go"></span>
@@ -435,14 +485,14 @@
 <span class="go">Name: Height, dtype: float64</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="groupby">
-<h3>3. Groupby对象<a class="headerlink" href="#groupby" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="groupby">
+<h3>3. Groupby对象<a class="headerlink" href="#groupby" title="Permalink to this heading">#</a></h3>
 <p>能够注意到，最终具体做分组操作时，所调用的方法都来自于 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">groupby</span></code> 对象，这个对象上定义了许多方法，也具有一些方便的属性。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [13]: </span><span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;School&#39;</span><span class="p">,</span> <span class="s1">&#39;Grade&#39;</span><span class="p">])</span>
 
 <span class="gp">In [14]: </span><span class="n">gb</span>
-<span class="gh">Out[14]: </span><span class="go">&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000002647F096DC8&gt;</span>
+<span class="gh">Out[14]: </span><span class="go">&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x000002116E61C460&gt;</span>
 </pre></div>
 </div>
 <p>通过 <code class="docutils literal notranslate"><span class="pre">ngroups</span></code> 属性，可以得到分组个数：</p>
@@ -496,9 +546,9 @@
 </pre></div>
 </div>
 <p>这里列出了2个属性和2个方法，而先前的 <code class="docutils literal notranslate"><span class="pre">mean</span></code> 、 <code class="docutils literal notranslate"><span class="pre">median</span></code> 都是 <code class="docutils literal notranslate"><span class="pre">groupby</span></code> 对象上的方法，这些函数和许多其他函数的操作具有高度相似性，将在之后的小节进行专门介绍。</p>
-</div>
-<div class="section" id="id5">
-<h3>4. 分组的三大操作<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id5">
+<h3>4. 分组的三大操作<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>熟悉了一些分组的基本知识后，重新回到开头举的三个例子，可能会发现一些端倪，即这三种类型分组返回的数据型态并不一样：</p>
 <ul class="simple">
 <li><p>第一个例子中，每一个组返回一个标量值，可以是平均值、中位数、组容量 <code class="docutils literal notranslate"><span class="pre">size</span></code> 等</p></li>
@@ -506,12 +556,12 @@
 <li><p>第三个例子中，既不是标量也不是序列，返回的整个组所在行的本身，即返回了 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 类型</p></li>
 </ul>
 <p>由此，引申出分组的三大操作：聚合、变换和过滤，分别对应了三个例子的操作，下面就要分别介绍相应的 <code class="docutils literal notranslate"><span class="pre">agg</span></code> 、 <code class="docutils literal notranslate"><span class="pre">transform</span></code> 和 <code class="docutils literal notranslate"><span class="pre">filter</span></code> 函数及其操作。</p>
-</div>
-</div>
-<div class="section" id="id6">
-<h2>二、聚合函数<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id7">
-<h3>1. 内置聚合函数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id6">
+<h2>二、聚合函数<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<section id="id7">
+<h3>1. 内置聚合函数<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>在介绍agg之前，首先要了解一些直接定义在groupby对象的聚合函数，因为它的速度基本都会经过内部的优化，使用功能时应当优先考虑。根据返回标量值的原则，包括如下函数： <code class="docutils literal notranslate"><span class="pre">max/min/mean/median/count/all/any/idxmax/idxmin/mad/nunique/skew/quantile/sum/std/var/sem/size/prod</span></code> 。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [20]: </span><span class="n">gb</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span>
 
@@ -547,9 +597,9 @@
 <span class="go">Male     193.9    89.0</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="agg">
-<h3>2. agg方法<a class="headerlink" href="#agg" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="agg">
+<h3>2. agg方法<a class="headerlink" href="#agg" title="Permalink to this heading">#</a></h3>
 <p>虽然在 <code class="docutils literal notranslate"><span class="pre">groupby</span></code> 对象上定义了许多方便的函数，但仍然有以下不便之处：</p>
 <ul class="simple">
 <li><p>无法同时使用多个函数</p></li>
@@ -589,12 +639,12 @@
 </div>
 <p>【c】使用自定义函数</p>
 <p>在 <code class="docutils literal notranslate"><span class="pre">agg</span></code> 中可以使用具体的自定义函数， <span class="red">需要注意传入函数的参数是之前数据源中的列，逐列进行计算</span> 。下面分组计算身高和体重的极差：</p>
-<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [27]: </span><span class="n">gb</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
 <span class="gh">Out[27]: </span><span class="go"></span>
-<span class="go">          Height     Weight</span>
-<span class="go">Gender                     </span>
-<span class="go">Female  13.79697  13.918519</span>
-<span class="go">Male    17.92549  21.759259</span>
+<span class="go">        Height  Weight</span>
+<span class="go">Gender                </span>
+<span class="go">Female    24.8    29.0</span>
+<span class="go">Male      38.2    38.0</span>
 </pre></div>
 </div>
 <div class="hint admonition">
@@ -662,12 +712,12 @@
 <span class="go">Male      High   8854.9   89.0</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id8">
-<h2>三、变换和过滤<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="transform">
-<h3>1. 变换函数与transform方法<a class="headerlink" href="#transform" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id8">
+<h2>三、变换和过滤<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<section id="transform">
+<h3>1. 变换函数与transform方法<a class="headerlink" href="#transform" title="Permalink to this heading">#</a></h3>
 <p>变换函数的返回值为同长度的序列，最常用的内置变换函数是累计函数： <code class="docutils literal notranslate"><span class="pre">cumcount/cumsum/cumprod/cummax/cummin</span></code> ，它们的使用方式和聚合函数类似，只不过完成的是组内累计操作。此外在 <code class="docutils literal notranslate"><span class="pre">groupby</span></code> 对象上还定义了填充类和滑窗类的变换函数，这些函数的一般形式将会分别在第七章和第十章中讨论，此处略过。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [34]: </span><span class="n">gb</span><span class="o">.</span><span class="n">cummax</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="gh">Out[34]: </span><span class="go"></span>
@@ -714,9 +764,9 @@
 <span class="go">4  173.62549  72.759259</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>2. 组索引与过滤<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>2. 组索引与过滤<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>在上一章中介绍了索引的用法，那么索引和过滤有什么区别呢？</p>
 <p>过滤在分组中是对于组的过滤，而索引是对于行的过滤，在第二章中的返回值，无论是布尔列表还是元素列表或者位置列表，本质上都是对于行的筛选，即如果符合筛选条件的则选入结果表，否则不选入。</p>
 <p>组过滤作为行过滤的推广，指的是如果对一个组的全体所在行进行统计的结果返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 则会被保留， <code class="docutils literal notranslate"><span class="pre">False</span></code> 则该组会被过滤，最后把所有未被过滤的组其对应的所在行拼接起来作为 <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> 返回。</p>
@@ -738,20 +788,20 @@
 <div><p>从概念上说，索引功能是组过滤功能的子集，请使用 <code class="docutils literal notranslate"><span class="pre">filter</span></code> 函数完成 <code class="docutils literal notranslate"><span class="pre">loc[.]</span></code> 的功能，这里假设 ” <code class="docutils literal notranslate"><span class="pre">.</span></code> “是元素列表。</p>
 </div></blockquote>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>四、跨列分组<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="apply">
-<h3>1. apply的引入<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id10">
+<h2>四、跨列分组<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="apply">
+<h3>1. apply的引入<a class="headerlink" href="#apply" title="Permalink to this heading">#</a></h3>
 <p>之前几节介绍了三大分组操作，但事实上还有一种常见的分组场景，无法用前面介绍的任何一种方法处理，例如现在如下定义身体质量指数BMI：</p>
 <div class="math notranslate nohighlight">
 \[{\rm BMI} = {\rm\frac{Weight}{Height^2}}\]</div>
 <p>其中体重和身高的单位分别为千克和米，需要分组计算组BMI的均值。</p>
 <p>首先，这显然不是过滤操作，因此 <code class="docutils literal notranslate"><span class="pre">filter</span></code> 不符合要求；其次，返回的均值是标量而不是序列，因此 <code class="docutils literal notranslate"><span class="pre">transform</span></code> 不符合要求；最后，似乎使用 <code class="docutils literal notranslate"><span class="pre">agg</span></code> 函数能够处理，但是之前强调过聚合函数是逐列处理的，而不能够 <span class="red">多列数据同时处理</span> 。由此，引出了 <code class="docutils literal notranslate"><span class="pre">apply</span></code> 函数来解决这一问题。</p>
-</div>
-<div class="section" id="id11">
-<h3>2. apply的使用<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>2. apply的使用<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>在设计上， <code class="docutils literal notranslate"><span class="pre">apply</span></code> 的自定义函数传入参数与 <code class="docutils literal notranslate"><span class="pre">filter</span></code> 完全一致，只不过后者只允许返回布尔值。现如下解决上述计算问题：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [38]: </span><span class="k">def</span> <span class="nf">BMI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="gp">   ....: </span>    <span class="n">Height</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Height&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">100</span>
@@ -850,12 +900,12 @@
 <div><p>在 <code class="docutils literal notranslate"><span class="pre">groupby</span></code> 对象中还定义了 <code class="docutils literal notranslate"><span class="pre">cov</span></code> 和 <code class="docutils literal notranslate"><span class="pre">corr</span></code> 函数，从概念上说也属于跨列的分组处理。请利用之前定义的 <code class="docutils literal notranslate"><span class="pre">gb</span></code> 对象，使用apply函数实现与 <code class="docutils literal notranslate"><span class="pre">gb.cov()</span></code> 同样的功能并比较它们的性能。</p>
 </div></blockquote>
 </div>
-</div>
-</div>
-<div class="section" id="id12">
-<h2>五、练习<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ex1">
-<h3>Ex1：汽车数据集<a class="headerlink" href="#ex1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id12">
+<h2>五、练习<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<section id="ex1">
+<h3>Ex1：汽车数据集<a class="headerlink" href="#ex1" title="Permalink to this heading">#</a></h3>
 <p>现有一份汽车数据集，其中 <code class="docutils literal notranslate"><span class="pre">Brand,</span> <span class="pre">Disp.,</span> <span class="pre">HP</span></code> 分别代表汽车品牌、发动机蓄量、发动机输出。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [45]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/car.csv&#39;</span><span class="p">)</span>
 
@@ -874,9 +924,9 @@
 <li><p>对类型 <code class="docutils literal notranslate"><span class="pre">Type</span></code> 分组，对 <code class="docutils literal notranslate"><span class="pre">HP</span></code> 进行组内的 <code class="docutils literal notranslate"><span class="pre">min-max</span></code> 归一化。</p></li>
 <li><p>对类型 <code class="docutils literal notranslate"><span class="pre">Type</span></code> 分组，计算 <code class="docutils literal notranslate"><span class="pre">Disp.</span></code> 与 <code class="docutils literal notranslate"><span class="pre">HP</span></code> 的相关系数。</p></li>
 </ol>
-</div>
-<div class="section" id="ex2-transform">
-<h3>Ex2：实现transform函数<a class="headerlink" href="#ex2-transform" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ex2-transform">
+<h3>Ex2：实现transform函数<a class="headerlink" href="#ex2-transform" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">groupby</span></code> 对象的构造方法是 <code class="docutils literal notranslate"><span class="pre">my_groupby(df,</span> <span class="pre">group_cols)</span></code></p></li>
 <li><p>支持单列分组与多列分组</p></li>
@@ -884,31 +934,40 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">pandas</span></code> 的 <code class="docutils literal notranslate"><span class="pre">transform</span></code> 不能跨列计算，请支持此功能，即仍返回 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 但 <code class="docutils literal notranslate"><span class="pre">col</span></code> 参数为多列</p></li>
 <li><p>无需考虑性能与异常处理，只需实现上述功能，在给出测试样例的同时与 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">transform</span></code> 对比结果是否一致</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
-              </div>
+              </article>
               
+
               
-          </main>
+          </div>
           
-
       </div>
     </div>
 
-    
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-
-    <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    <p>
-          &copy; Copyright 2020, Datawhale, 耿远昊.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020-2022, Datawhale, 耿远昊.<br>
+</p>
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

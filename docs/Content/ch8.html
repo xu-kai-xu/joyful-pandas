@@ -1,15 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第八章 文本数据 &#8212; Joyful Pandas 1.0 documentation</title>
-    
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
+    <title>第八章 文本数据 &#8212; Joyful Pandas 1.0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -17,330 +24,378 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="第九章 分类数据" href="ch9.html" />
     <link rel="prev" title="第七章 缺失数据" href="ch7.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
-
-    
-    <a class="navbar-brand" href="../index.html">
-      <img src="../_static/finallogo1.svg" class="logo" alt="logo">
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Home.html">Home</a>
-        </li>
-        
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">Content</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Author.html">Author</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Datawhale.html">Datawhale</a>
-        </li>
-        
-        
-        <li class="nav-item">
-            <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
-        </li>
-        
-      </ul>
-
-
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
       
 
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
-      </ul>
     </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/finallogo1.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/finallogo1.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Home.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Content
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Author.html">
+  Author
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90.html">
+  pandas数据处理与分析
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E8%A1%A5%E5%85%85%E4%B9%A0%E9%A2%98.html">
+  补充习题
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
 
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form>
-
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-  
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   第一章 预备知识
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   第二章 pandas基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   第三章 索引
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   第四章 分组
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   第五章 变形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   第六章 连接
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   第七章 缺失数据
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第八章 文本数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch9.html">
+   第九章 分类数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   第十章 时序数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">
+   参考答案
+  </a>
+ </li>
+</ul>
 
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-        
-          
-              <li class="">
-                  <a href="Preface.html">Preface</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch1.html">第一章 预备知识</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch2.html">第二章 pandas基础</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch3.html">第三章 索引</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch4.html">第四章 分组</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch5.html">第五章 变形</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch6.html">第六章 连接</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch7.html">第七章 缺失数据</a>
-              </li>
-          
-        
-          
-              <li class="active">
-                  <a href="">第八章 文本数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch9.html">第九章 分类数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch10.html">第十章 时序数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">参考答案</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-    </ul>
-
+  </div>
 </nav>
-          </div>
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-              
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#str" class="nav-link">一、str对象</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id2" class="nav-link">1. str对象的设计意图</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id3" class="nav-link">2. []索引器</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#string" class="nav-link">3. string类型</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id4" class="nav-link">二、正则表达式基础</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id5" class="nav-link">1. 一般字符的匹配</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id6" class="nav-link">2. 元字符基础</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id7" class="nav-link">3. 简写字符集</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id8" class="nav-link">三、文本处理的五类操作</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id9" class="nav-link">1. 拆分</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id10" class="nav-link">2. 合并</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id11" class="nav-link">3. 匹配</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id12" class="nav-link">4. 替换</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id13" class="nav-link">5. 提取</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id14" class="nav-link">四、常用字符串函数</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id15" class="nav-link">1. 字母型函数</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id16" class="nav-link">2. 数值型函数</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id17" class="nav-link">3. 统计型函数</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id18" class="nav-link">4. 格式型函数</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id19" class="nav-link">五、练习</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex1" class="nav-link">Ex1：房屋信息数据集</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex2" class="nav-link">Ex2：《权力的游戏》剧本数据集</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#str">
+   一、str对象
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     1. str对象的设计意图
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2. []索引器
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string">
+     3. string类型
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   二、正则表达式基础
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     1. 一般字符的匹配
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     2. 元字符基础
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     3. 简写字符集
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id8">
+   三、文本处理的五类操作
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     1. 拆分
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     2. 合并
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     3. 匹配
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     4. 替换
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     5. 提取
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id14">
+   四、常用字符串函数
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id15">
+     1. 字母型函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id16">
+     2. 数值型函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id17">
+     3. 统计型函数
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id18">
+     4. 格式型函数
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id19">
+   五、练习
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex1">
+     Ex1：房屋信息数据集
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex2">
+     Ex2：《权力的游戏》剧本数据集
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
 
 
-              
-          </div>
           
-
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
-  <div class="section" id="id1">
-<h1>第八章 文本数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <section id="id1">
+<h1>第八章 文本数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<div class="section" id="str">
-<h2>一、str对象<a class="headerlink" href="#str" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>1. str对象的设计意图<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="str">
+<h2>一、str对象<a class="headerlink" href="#str" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>1. str对象的设计意图<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">str</span></code> 对象是定义在 <code class="docutils literal notranslate"><span class="pre">Index</span></code> 或 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 上的属性，专门用于处理每个元素的文本内容，其内部定义了大量方法，因此对一个序列进行文本处理，首先需要获取其 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象。在Python标准库中也有 <code class="docutils literal notranslate"><span class="pre">str</span></code> 模块，为了使用上的便利，有许多函数的用法 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 照搬了它的设计，例如字母转为大写的操作：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">var</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
 
@@ -350,7 +405,7 @@
 <span class="gp">In [5]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;abcd&#39;</span><span class="p">,</span> <span class="s1">&#39;efg&#39;</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">])</span>
 
 <span class="gp">In [6]: </span><span class="n">s</span><span class="o">.</span><span class="n">str</span>
-<span class="gh">Out[6]: </span><span class="go">&lt;pandas.core.strings.accessor.StringMethods at 0x264028543c8&gt;</span>
+<span class="gh">Out[6]: </span><span class="go">&lt;pandas.core.strings.accessor.StringMethods at 0x2116e84adc0&gt;</span>
 
 <span class="gp">In [7]: </span><span class="n">s</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># pandas中str对象上的upper方法</span>
 <span class="gh">Out[7]: </span><span class="go"></span>
@@ -361,9 +416,9 @@
 </pre></div>
 </div>
 <p>根据文档 <code class="docutils literal notranslate"><span class="pre">API</span></code> 材料，在 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 的50个 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象方法中，有31个是和标准库中的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 模块方法同名且功能一致，这为批量处理序列提供了有力的工具。</p>
-</div>
-<div class="section" id="id3">
-<h3>2. []索引器<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3>2. []索引器<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>对于 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象而言，可理解为其对字符串进行了序列化的操作，例如在一般的字符串中，通过 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 可以取出某个位置的元素：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [8]: </span><span class="n">var</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gh">Out[8]: </span><span class="go">&#39;a&#39;</span>
@@ -397,9 +452,9 @@
 <span class="go">dtype: object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="string">
-<h3>3. string类型<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="string">
+<h3>3. string类型<a class="headerlink" href="#string" title="Permalink to this heading">#</a></h3>
 <p>在上一章提到，从 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 的 <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> 版本开始，引入了 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型，其引入的动机在于：原来所有的字符串类型都会以 <code class="docutils literal notranslate"><span class="pre">object</span></code> 类型的 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 进行存储，但 <code class="docutils literal notranslate"><span class="pre">object</span></code> 类型只应当存储混合类型，例如同时存储浮点、字符串、字典、列表、自定义类型等，因此字符串有必要同数值型或 <code class="docutils literal notranslate"><span class="pre">category</span></code> 一样，具有自己的数据存储类型，从而引入了 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型。</p>
 <p>总体上说，绝大多数对于 <code class="docutils literal notranslate"><span class="pre">object</span></code> 和 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型的序列使用 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象方法产生的结果是一致，但是在下面提到的两点上有较大差异：</p>
 <p>首先，应当尽量保证每一个序列中的值都是字符串的情况下才使用 <code class="docutils literal notranslate"><span class="pre">str</span></code> 属性，但这并不是必须的，其必要条件是序列中至少有一个可迭代（Iterable）对象，包括但不限于字符串、字典、列表。对于一个可迭代对象， <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象和 <code class="docutils literal notranslate"><span class="pre">object</span></code> 类型的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象返回结果可能是不同的。</p>
@@ -422,7 +477,7 @@
 <span class="go">dtype: string</span>
 </pre></div>
 </div>
-<p>除了最后一个字符串元素，前三个元素返回的值都不同，其原因在于当序列类型为 <code class="docutils literal notranslate"><span class="pre">object</span></code> 时，是对于每一个元素进行 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 索引，因此对于字典而言，返回temp_1字符串，对于列表则返回第二个值，而第三个为不可迭代对象，返回缺失值，第四个是对字符串进行 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 索引。而 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象先把整个元素转为字面意义的字符串，例如对于列表而言，第一个元素即 “{“，而对于最后一个字符串元素而言，恰好转化前后的表示方法一致，因此结果和 <code class="docutils literal notranslate"><span class="pre">object</span></code> 类型一致。</p>
+<p>除了最后一个字符串元素，前三个元素返回的值都不同，其原因在于当序列类型为 <code class="docutils literal notranslate"><span class="pre">object</span></code> 时，是对于每一个元素进行 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 索引，因此对于字典而言，返回temp_1字符串，对于列表则返回第二个值，而第三个为不可迭代对象，返回缺失值，第四个是对字符串进行 <code class="docutils literal notranslate"><span class="pre">[]</span></code> 索引。而 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象先把整个元素转为字面意义的字符串，例如对于列表而言，第一个元素即 “{”，而对于最后一个字符串元素而言，恰好转化前后的表示方法一致，因此结果和 <code class="docutils literal notranslate"><span class="pre">object</span></code> 类型一致。</p>
 <p>除了对于某些对象的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 序列化方法不同之外，两者另外的一个差别在于， <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型是 <code class="docutils literal notranslate"><span class="pre">Nullable</span></code> 类型，但 <code class="docutils literal notranslate"><span class="pre">object</span></code> 不是。这意味着 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型的序列，如果调用的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 方法返回值为整数 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 和布尔 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 时，其分别对应的 <code class="docutils literal notranslate"><span class="pre">dtype</span></code> 是 <code class="docutils literal notranslate"><span class="pre">Int</span></code> 和 <code class="docutils literal notranslate"><span class="pre">boolean</span></code> 的 <code class="docutils literal notranslate"><span class="pre">Nullable</span></code> 类型，而 <code class="docutils literal notranslate"><span class="pre">object</span></code> 类型则会分别返回 <code class="docutils literal notranslate"><span class="pre">int/float</span></code> 和 <code class="docutils literal notranslate"><span class="pre">bool/object</span></code> ，取决于缺失值的存在与否。同时，字符串的比较操作，也具有相似的特性， <code class="docutils literal notranslate"><span class="pre">string</span></code> 返回 <code class="docutils literal notranslate"><span class="pre">Nullable</span></code> 类型，但 <code class="docutils literal notranslate"><span class="pre">object</span></code> 不会。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [16]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
 
@@ -484,13 +539,13 @@
 <span class="go">dtype: string</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>二、正则表达式基础<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id4">
+<h2>二、正则表达式基础<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>这一节的两个表格来自于 <a class="reference external" href="https://github.com/cdoco/learn-regex-zh">learn-regex-zh</a> 这个关于正则表达式项目，其使用 <code class="docutils literal notranslate"><span class="pre">MIT</span></code> 开源许可协议。这里只是介绍正则表达式的基本用法，需要系统学习的读者可参考 <a class="reference external" href="https://book.douban.com/subject/26285406/">正则表达式必知必会</a> 一书。</p>
-<div class="section" id="id5">
-<h3>1. 一般字符的匹配<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<section id="id5">
+<h3>1. 一般字符的匹配<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>正则表达式是一种按照某种正则模式，从左到右匹配字符串中内容的一种工具。对于一般的字符而言，它可以找到其所在的位置，这里为了演示便利，使用了 <code class="docutils literal notranslate"><span class="pre">python</span></code> 中 <code class="docutils literal notranslate"><span class="pre">re</span></code> 模块的 <code class="docutils literal notranslate"><span class="pre">findall</span></code> 函数来匹配所有出现过但不重叠的模式，第一个参数是正则表达式，第二个参数是待匹配的字符串。例如，在下面的字符串中找出 <code class="docutils literal notranslate"><span class="pre">apple</span></code> ：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [28]: </span><span class="kn">import</span> <span class="nn">re</span>
 
@@ -498,14 +553,10 @@
 <span class="gh">Out[29]: </span><span class="go">[&#39;Apple&#39;, &#39;Apple&#39;]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>2. 元字符基础<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>2. 元字符基础<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <table class="table">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>元字符</p></th>
 <th class="head"><p>描述</p></th>
@@ -572,15 +623,11 @@
 <span class="gh">Out[36]: </span><span class="go">[&#39;ab&#39;, &#39;aa&#39;, &#39;c&#39;, &#39;ad&#39;, &#39;aa&#39;, &#39;e&#39;]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h3>3. 简写字符集<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id7">
+<h3>3. 简写字符集<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>此外，正则表达式中还有一类简写字符集，其等价于一组字符的集合：</p>
 <table class="table">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>简写</p></th>
 <th class="head"><p>描述</p></th>
@@ -628,12 +675,12 @@
 <span class="gh">Out[41]: </span><span class="go">[(&#39;黄浦区&#39;, &#39;方浜中路&#39;, &#39;249号&#39;), (&#39;宝山区&#39;, &#39;密山路&#39;, &#39;5号&#39;)]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id8">
-<h2>三、文本处理的五类操作<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3>1. 拆分<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id8">
+<h2>三、文本处理的五类操作<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<section id="id9">
+<h3>1. 拆分<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">str.split</span></code> 能够把字符串的列进行拆分，其中第一个参数为正则表达式，可选参数包括从左到右的最大拆分次数 <code class="docutils literal notranslate"><span class="pre">n</span></code> ，是否展开为多个列 <code class="docutils literal notranslate"><span class="pre">expand</span></code> 。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [42]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;上海市黄浦区方浜中路249号&#39;</span><span class="p">,</span>
 <span class="gp">   ....: </span>            <span class="s1">&#39;上海市宝山区密山路5号&#39;</span><span class="p">])</span>
@@ -660,9 +707,9 @@
 <span class="go">1     上海市宝山区密山路5号</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id10">
-<h3>2. 合并<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id10">
+<h3>2. 合并<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>关于合并一共有两个函数，分别是 <code class="docutils literal notranslate"><span class="pre">str.join</span></code> 和 <code class="docutils literal notranslate"><span class="pre">str.cat</span></code> 。 <code class="docutils literal notranslate"><span class="pre">str.join</span></code> 表示用某个连接符把 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 中的字符串列表连接起来，如果列表中出现了非字符串元素则返回缺失值：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [46]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="s1">&#39;c&#39;</span><span class="p">]])</span>
 
@@ -695,9 +742,9 @@
 <span class="go">dtype: object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id11">
-<h3>3. 匹配<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id11">
+<h3>3. 匹配<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">str.contains</span></code> 返回了每个字符串是否包含正则模式的布尔序列：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [53]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;my cat&#39;</span><span class="p">,</span> <span class="s1">&#39;he is fat&#39;</span><span class="p">,</span> <span class="s1">&#39;railway station&#39;</span><span class="p">])</span>
 
@@ -771,9 +818,9 @@
 <span class="go">dtype: int64</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id12">
-<h3>4. 替换<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id12">
+<h3>4. 替换<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">str.replace</span></code> 和 <code class="docutils literal notranslate"><span class="pre">replace</span></code> 并不是一个函数，在使用字符串替换时应当使用前者。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [64]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;a_1_b&#39;</span><span class="p">,</span><span class="s1">&#39;c_?&#39;</span><span class="p">])</span>
 
@@ -846,9 +893,9 @@
 </pre></div>
 </div>
 <p>这里虽然看起来有些繁杂，但是实际数据处理中对应的替换，一般都会通过代码来获取数据从而构造字典映射，在具体写法上会简洁的多。</p>
-</div>
-<div class="section" id="id13">
-<h3>5. 提取<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id13">
+<h3>5. 提取<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>提取既可以认为是一种返回具体元素（而不是布尔值或元素对应的索引位置）的匹配操作，也可以认为是一种特殊的拆分操作。前面提到的 <code class="docutils literal notranslate"><span class="pre">str.split</span></code> 例子中会把分隔符去除，这并不是用户想要的效果，这时候就可以用 <code class="docutils literal notranslate"><span class="pre">str.extract</span></code> 进行提取：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [76]: </span><span class="n">pat</span> <span class="o">=</span> <span class="s1">&#39;(\w+市)(\w+区)(\w+路)(\d+号)&#39;</span>
 
@@ -905,13 +952,13 @@
 <span class="go">dtype: object</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id14">
-<h2>四、常用字符串函数<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id14">
+<h2>四、常用字符串函数<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
 <p>除了上述介绍的五类字符串操作有关的函数之外， <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象上还定义了一些实用的其他方法，在此进行介绍：</p>
-<div class="section" id="id15">
-<h3>1. 字母型函数<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<section id="id15">
+<h3>1. 字母型函数<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">upper,</span> <span class="pre">lower,</span> <span class="pre">title,</span> <span class="pre">capitalize,</span> <span class="pre">swapcase</span></code> 这五个函数主要用于字母的大小写转化，从下面的例子中就容易领会其功能：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [86]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;CAPITALS&#39;</span><span class="p">,</span> <span class="s1">&#39;this is a sentence&#39;</span><span class="p">,</span> <span class="s1">&#39;SwApCaSe&#39;</span><span class="p">])</span>
 
@@ -956,9 +1003,9 @@
 <span class="go">dtype: object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id16">
-<h3>2. 数值型函数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id16">
+<h3>2. 数值型函数<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>这里着重需要介绍的是 <code class="docutils literal notranslate"><span class="pre">pd.to_numeric</span></code> 方法，它虽然不是 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象上的方法，但是能够对字符格式的数值进行快速转换和筛选。其主要参数包括 <code class="docutils literal notranslate"><span class="pre">errors</span></code> 和 <code class="docutils literal notranslate"><span class="pre">downcast</span></code> 分别代表了非数值的处理模式和转换类型。其中，对于不能转换为数值的有三种 <code class="docutils literal notranslate"><span class="pre">errors</span></code> 选项， <code class="docutils literal notranslate"><span class="pre">raise,</span> <span class="pre">coerce,</span> <span class="pre">ignore</span></code> 分别表示直接报错、设为缺失以及保持原来的字符串。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [92]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2.2&#39;</span><span class="p">,</span> <span class="s1">&#39;2e&#39;</span><span class="p">,</span> <span class="s1">&#39;??&#39;</span><span class="p">,</span> <span class="s1">&#39;-2.1&#39;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">])</span>
 
@@ -991,9 +1038,9 @@
 <span class="go">dtype: object</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id17">
-<h3>3. 统计型函数<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id17">
+<h3>3. 统计型函数<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">count</span></code> 和 <code class="docutils literal notranslate"><span class="pre">len</span></code> 的作用分别是返回出现正则模式的次数和字符串的长度：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [96]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="s1">&#39;cat rat fat at&#39;</span><span class="p">,</span> <span class="s1">&#39;get feed sheet heat&#39;</span><span class="p">])</span>
 
@@ -1010,9 +1057,9 @@
 <span class="go">dtype: int64</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id18">
-<h3>4. 格式型函数<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id18">
+<h3>4. 格式型函数<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>格式型函数主要分为两类，第一种是除空型，第二种是填充型。其中，第一类函数一共有三种，它们分别是 <code class="docutils literal notranslate"><span class="pre">strip,</span> <span class="pre">rstrip,</span> <span class="pre">lstrip</span></code> ，分别代表去除两侧空格、右侧空格和左侧空格。这些函数在数据清洗时是有用的，特别是列名含有非法空格的时候。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [99]: </span><span class="n">my_index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Index</span><span class="p">([</span><span class="s1">&#39; col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2 &#39;</span><span class="p">,</span> <span class="s1">&#39; col3 &#39;</span><span class="p">])</span>
 
@@ -1099,12 +1146,12 @@
 <span class="go">dtype: string</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id19">
-<h2>五、练习<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ex1">
-<h3>Ex1：房屋信息数据集<a class="headerlink" href="#ex1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id19">
+<h2>五、练习<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
+<section id="ex1">
+<h3>Ex1：房屋信息数据集<a class="headerlink" href="#ex1" title="Permalink to this heading">#</a></h3>
 <p>现有一份房屋信息数据集如下：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [114]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;data/house_info.xls&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span>
 <span class="gp">   .....: </span>                <span class="s1">&#39;floor&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;area&#39;</span><span class="p">,</span><span class="s1">&#39;price&#39;</span><span class="p">])</span>
@@ -1123,9 +1170,9 @@
 <li><p>将 <code class="docutils literal notranslate"><span class="pre">floor</span></code> 列替换为 <code class="docutils literal notranslate"><span class="pre">Level,</span> <span class="pre">Highest</span></code> 两列，其中的元素分别为 <code class="docutils literal notranslate"><span class="pre">string</span></code> 类型的层类别（高层、中层、低层）与整数类型的最高层数。</p></li>
 <li><p>计算房屋每平米的均价 <code class="docutils literal notranslate"><span class="pre">avg_price</span></code> ，以 <code class="docutils literal notranslate"><span class="pre">***元/平米</span></code> 的格式存储到表中，其中 <code class="docutils literal notranslate"><span class="pre">***</span></code> 为整数。</p></li>
 </ol>
-</div>
-<div class="section" id="ex2">
-<h3>Ex2：《权力的游戏》剧本数据集<a class="headerlink" href="#ex2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ex2">
+<h3>Ex2：《权力的游戏》剧本数据集<a class="headerlink" href="#ex2" title="Permalink to this heading">#</a></h3>
 <p>现有一份权力的游戏剧本数据集如下：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [116]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/script.csv&#39;</span><span class="p">)</span>
 
@@ -1142,31 +1189,40 @@
 <li><p>以空格为单词的分割符号，请求出单句台词平均单词量最多的前五个人。</p></li>
 <li><p>若某人的台词中含有问号，那么下一个说台词的人即为回答者。若上一人台词中含有 <span class="math notranslate nohighlight">\(n\)</span> 个问号，则认为回答者回答了 <span class="math notranslate nohighlight">\(n\)</span> 个问题，请求出回答最多问题的前五个人。</p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
-              </div>
+              </article>
               
+
               
-          </main>
+          </div>
           
-
       </div>
     </div>
 
-    
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-
-    <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    <p>
-          &copy; Copyright 2020, Datawhale, 耿远昊.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020-2022, Datawhale, 耿远昊.<br>
+</p>
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>

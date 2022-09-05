@@ -1,15 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>第九章 分类数据 &#8212; Joyful Pandas 1.0 documentation</title>
-    
-  <link rel="stylesheet" href="../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    
+    <title>第九章 分类数据 &#8212; Joyful Pandas 1.0 documentation</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
   <link rel="stylesheet"
     href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
@@ -17,292 +24,330 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/s4defs-roles.css" />
-    
-  <link rel="preload" as="script" href="../_static/js/index.30270b6e4c972e43c488.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="第十章 时序数据" href="ch10.html" />
     <link rel="prev" title="第八章 文本数据" href="ch8.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
-<div class="container-xl">
-
-    
-    <a class="navbar-brand" href="../index.html">
-      <img src="../_static/finallogo1.svg" class="logo" alt="logo">
-    </a>
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div id="navbar-menu" class="col-lg-9 collapse navbar-collapse">
-      <ul id="navbar-main-elements" class="navbar-nav mr-auto">
-        
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Home.html">Home</a>
-        </li>
-        
-        <li class="nav-item active">
-            <a class="nav-link" href="index.html">Content</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Author.html">Author</a>
-        </li>
-        
-        <li class="nav-item ">
-            <a class="nav-link" href="../Datawhale.html">Datawhale</a>
-        </li>
-        
-        
-        <li class="nav-item">
-            <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
-        </li>
-        
-      </ul>
-
-
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
       
 
-      <ul class="navbar-nav">
-        
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" target="_blank" rel="noopener">
-              <span><i class="fab fa-github-square"></i></span>
-            </a>
-          </li>
-        
-        
-      </ul>
     </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/finallogo1.svg" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/finallogo1.svg" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Home.html">
+  Home
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="index.html">
+  Content
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Author.html">
+  Author
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../Datawhale.html">
+  Datawhale
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../pandas%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E4%B8%8E%E5%88%86%E6%9E%90.html">
+  pandas数据处理与分析
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../%E8%A1%A5%E5%85%85%E4%B9%A0%E9%A2%98.html">
+  补充习题
+ </a>
+</li>
+
+    
+    <li class="nav-item">
+        <a class="nav-link nav-external" href="https://pandas.pydata.org/docs/index.html">Doc<i class="fas fa-external-link-alt"></i></a>
+    </li>
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/datawhalechina/joyful-pandas" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
     </nav>
     
 
-    <div class="container-xl">
-      <div class="row">
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
           
-          <div class="col-12 col-md-3 bd-sidebar">
 
-<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form>
-
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-  
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch1.html">
+   第一章 预备知识
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch2.html">
+   第二章 pandas基础
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch3.html">
+   第三章 索引
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch4.html">
+   第四章 分组
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch5.html">
+   第五章 变形
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch6.html">
+   第六章 连接
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch7.html">
+   第七章 缺失数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch8.html">
+   第八章 文本数据
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   第九章 分类数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ch10.html">
+   第十章 时序数据
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">
+   参考答案
+  </a>
+ </li>
+</ul>
 
-  <ul class="nav bd-sidenav">
-      
-      
-      
-      
-        
-          
-              <li class="">
-                  <a href="Preface.html">Preface</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch1.html">第一章 预备知识</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch2.html">第二章 pandas基础</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch3.html">第三章 索引</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch4.html">第四章 分组</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch5.html">第五章 变形</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch6.html">第六章 连接</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch7.html">第七章 缺失数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch8.html">第八章 文本数据</a>
-              </li>
-          
-        
-          
-              <li class="active">
-                  <a href="">第九章 分类数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="ch10.html">第十章 时序数据</a>
-              </li>
-          
-        
-          
-              <li class="">
-                  <a href="%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">参考答案</a>
-              </li>
-          
-        
-      
-      
-      
-      
-      
-      
-    </ul>
-
+  </div>
 </nav>
-          </div>
-          
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
 
           
-          <div class="d-none d-xl-block col-xl-2 bd-toc">
-              
-<div class="tocsection onthispage pt-5 pb-3">
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
     <i class="fas fa-list"></i> On this page
 </div>
 
 <nav id="bd-toc-nav">
-    <ul class="nav section-nav flex-column">
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#cat" class="nav-link">一、cat对象</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id2" class="nav-link">1. cat对象的属性</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id3" class="nav-link">2. 类别的增加、删除和修改</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id4" class="nav-link">二、有序分类</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id5" class="nav-link">1. 序的建立</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id6" class="nav-link">2. 排序和比较</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id7" class="nav-link">三、区间类别</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#cutqcut" class="nav-link">1. 利用cut和qcut进行区间构造</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id8" class="nav-link">2. 一般区间的构造</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#id9" class="nav-link">3. 区间的属性与方法</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h2">
-            <a href="#id10" class="nav-link">四、练习</a><ul class="nav section-nav flex-column">
-                
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex1" class="nav-link">Ex1：统计未出现的类别</a>
-        </li>
-    
-        <li class="nav-item toc-entry toc-h3">
-            <a href="#ex2" class="nav-link">Ex2：钻石数据集</a>
-        </li>
-    
-            </ul>
-        </li>
-    
-    </ul>
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cat">
+   一、cat对象
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     1. cat对象的属性
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     2. 类别的增加、删除和修改
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   二、有序分类
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     1. 序的建立
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     2. 排序和比较
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   三、区间类别
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cutqcut">
+     1. 利用cut和qcut进行区间构造
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id8">
+     2. 一般区间的构造
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id9">
+     3. 区间的属性与方法
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id10">
+   四、练习
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex1">
+     Ex1：统计未出现的类别
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ex2">
+     Ex2：钻石数据集
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
 </nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
 
 
-              
-          </div>
           
-
           
-          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+          <div class="bd-content col-12 col-md-9 col-xl-7">
               
-              <div>
+              <article class="bd-article" role="main">
                 
-  <div class="section" id="id1">
-<h1>第九章 分类数据<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+  <section id="id1">
+<h1>第九章 分类数据<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="gp">In [2]: </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
-<div class="section" id="cat">
-<h2>一、cat对象<a class="headerlink" href="#cat" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>1. cat对象的属性<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="cat">
+<h2>一、cat对象<a class="headerlink" href="#cat" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>1. cat对象的属性<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <p>在 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中提供了 <code class="docutils literal notranslate"><span class="pre">category</span></code> 类型，使用户能够处理分类类型的变量，将一个普通序列转换成分类变量可以使用 <code class="docutils literal notranslate"><span class="pre">astype</span></code> 方法。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/learn_pandas.csv&#39;</span><span class="p">,</span>
 <span class="gp">   ...: </span>     <span class="n">usecols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Grade&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Gender&#39;</span><span class="p">,</span> <span class="s1">&#39;Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Weight&#39;</span><span class="p">])</span>
@@ -323,7 +368,7 @@
 </div>
 <p>在一个分类类型的 <code class="docutils literal notranslate"><span class="pre">Series</span></code> 中定义了 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 对象，它和上一章中介绍的 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象类似，定义了一些属性和方法来进行分类类别的操作。</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="n">s</span><span class="o">.</span><span class="n">cat</span>
-<span class="gh">Out[6]: </span><span class="go">&lt;pandas.core.arrays.categorical.CategoricalAccessor object at 0x0000026403481608&gt;</span>
+<span class="gh">Out[6]: </span><span class="go">&lt;pandas.core.arrays.categorical.CategoricalAccessor object at 0x000002117F376CA0&gt;</span>
 </pre></div>
 </div>
 <p>对于一个具体的分类，有两个组成部分，其一为类别的本身，它以 <code class="docutils literal notranslate"><span class="pre">Index</span></code> 类型存储，其二为是否有序，它们都可以通过 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 的属性被访问：</p>
@@ -345,9 +390,9 @@
 <span class="go">dtype: int8</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id3">
-<h3>2. 类别的增加、删除和修改<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id3">
+<h3>2. 类别的增加、删除和修改<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>通过 <code class="docutils literal notranslate"><span class="pre">cat</span></code> 对象的 <code class="docutils literal notranslate"><span class="pre">categories</span></code> 属性能够完成对类别的查询，那么应该如何进行“增改查删”的其他三个操作呢？</p>
 <div class="note admonition">
 <p class="admonition-title">类别不得直接修改</p>
@@ -417,12 +462,12 @@
 <span class="go">Categories (1, object): [&#39;本科二年级学生&#39;]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>二、有序分类<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3>1. 序的建立<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id4">
+<h2>二、有序分类<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<section id="id5">
+<h3>1. 序的建立<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>有序类别和无序类别可以通过 <code class="docutils literal notranslate"><span class="pre">as_unordered</span></code> 和 <code class="docutils literal notranslate"><span class="pre">reorder_categories</span></code> 互相转化，需要注意的是后者传入的参数必须是由当前序列的无序类别构成的列表，不能够增加新的类别，也不能缺少原来的类别，并且必须指定参数 <code class="docutils literal notranslate"><span class="pre">ordered=True</span></code> ，否则方法无效。例如，对年级高低进行相对大小的类别划分，然后再恢复无序状态：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [22]: </span><span class="n">s</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Grade</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
 
@@ -457,9 +502,9 @@
 <div><p>如果不想指定 <code class="docutils literal notranslate"><span class="pre">ordered=True</span></code> 参数，那么可以先用 <code class="docutils literal notranslate"><span class="pre">s.cat.as_ordered()</span></code> 转化为有序类别，再利用 <code class="docutils literal notranslate"><span class="pre">reorder_categories</span></code> 进行具体的相对大小调整。</p>
 </div></blockquote>
 </div>
-</div>
-<div class="section" id="id6">
-<h3>2. 排序和比较<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id6">
+<h3>2. 排序和比较<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>在第二章中，曾提到了字符串和数值类型序列的排序，此时就要说明分类变量的排序：只需把列的类型修改为 <code class="docutils literal notranslate"><span class="pre">category</span></code> 后，再赋予相应的大小关系，就能正常地使用 <code class="docutils literal notranslate"><span class="pre">sort_index</span></code> 和 <code class="docutils literal notranslate"><span class="pre">sort_values</span></code> 。例如，对年级进行排序：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [26]: </span><span class="n">df</span><span class="o">.</span><span class="n">Grade</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">Grade</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
 
@@ -538,12 +583,12 @@
 <span class="go">Name: Grade, dtype: bool</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id7">
-<h2>三、区间类别<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="cutqcut">
-<h3>1. 利用cut和qcut进行区间构造<a class="headerlink" href="#cutqcut" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id7">
+<h2>三、区间类别<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<section id="cutqcut">
+<h3>1. 利用cut和qcut进行区间构造<a class="headerlink" href="#cutqcut" title="Permalink to this heading">#</a></h3>
 <p>区间是一种特殊的类别，在实际数据分析中，区间序列往往是通过 <code class="docutils literal notranslate"><span class="pre">cut</span></code> 和 <code class="docutils literal notranslate"><span class="pre">qcut</span></code> 方法进行构造的，这两个函数能够把原序列的数值特征进行装箱，即用区间位置来代替原来的具体数值。</p>
 <p>首先介绍 <code class="docutils literal notranslate"><span class="pre">cut</span></code> 的常见用法：</p>
 <p>其中，最重要的参数是 <code class="docutils literal notranslate"><span class="pre">bins</span></code> ，如果传入整数 <code class="docutils literal notranslate"><span class="pre">n</span></code> ，则代表把整个传入数组的按照最大和最小值等间距地分为 <code class="docutils literal notranslate"><span class="pre">n</span></code> 段。由于区间默认是左开右闭，需要在调整时把最小值包含进去，在 <code class="docutils literal notranslate"><span class="pre">pandas</span></code> 中的解决方案是在值最小的区间左端点再减去 <code class="docutils literal notranslate"><span class="pre">0.001*(max-min)</span></code> ，因此如果对序列 <code class="docutils literal notranslate"><span class="pre">[1,2]</span></code> 划分为2个箱子时，第一个箱子的范围 <code class="docutils literal notranslate"><span class="pre">(0.999,1.5]</span></code> ，第二个箱子的范围是 <code class="docutils literal notranslate"><span class="pre">(1.5,2]</span></code> 。如果需要指定左闭右开时，需要把 <code class="docutils literal notranslate"><span class="pre">right</span></code> 参数设置为 <code class="docutils literal notranslate"><span class="pre">False</span></code> ，相应的区间调整方法是在值最大的区间右端点再加上 <code class="docutils literal notranslate"><span class="pre">0.001*(max-min)</span></code> 。</p>
@@ -613,9 +658,9 @@
 <span class="go">Categories (3, interval[float64]): [(33.999, 44.0] &lt; (44.0, 69.4] &lt; (69.4, 89.0]]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id8">
-<h3>2. 一般区间的构造<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id8">
+<h3>2. 一般区间的构造<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>对于某一个具体的区间而言，其具备三个要素，即左端点、右端点和端点的开闭状态，其中开闭状态可以指定 <code class="docutils literal notranslate"><span class="pre">right,</span> <span class="pre">left,</span> <span class="pre">both,</span> <span class="pre">neither</span></code> 中的一类：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [49]: </span><span class="n">my_interval</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Interval</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span>
 
@@ -700,9 +745,9 @@
 <span class="go">              dtype=&#39;interval[float64]&#39;)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="id9">
-<h3>3. 区间的属性与方法<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="id9">
+<h3>3. 区间的属性与方法<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">IntervalIndex</span></code> 上也定义了一些有用的属性和方法。同时，如果想要具体利用 <code class="docutils literal notranslate"><span class="pre">cut</span></code> 或者 <code class="docutils literal notranslate"><span class="pre">qcut</span></code> 的结果进行分析，那么需要先将其转为该种索引类型：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [62]: </span><span class="n">id_interval</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">IntervalIndex</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
@@ -741,12 +786,12 @@
 <span class="gh">Out[70]: </span><span class="go">array([ True,  True, False,  True, False])</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="id10">
-<h2>四、练习<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ex1">
-<h3>Ex1：统计未出现的类别<a class="headerlink" href="#ex1" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="id10">
+<h2>四、练习<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<section id="ex1">
+<h3>Ex1：统计未出现的类别<a class="headerlink" href="#ex1" title="Permalink to this heading">#</a></h3>
 <p>在第五章中介绍了 <code class="docutils literal notranslate"><span class="pre">crosstab</span></code> 函数，在默认参数下它能够对两个列的组合出现的频数进行统计汇总：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [71]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">],</span>
 <span class="gp">   ....: </span>                   <span class="s1">&#39;B&#39;</span><span class="p">:[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">]})</span>
@@ -774,9 +819,9 @@
 </pre></div>
 </div>
 <p>请实现一个带有 <code class="docutils literal notranslate"><span class="pre">dropna</span></code> 参数的 <code class="docutils literal notranslate"><span class="pre">my_crosstab</span></code> 函数来完成上面的功能。</p>
-</div>
-<div class="section" id="ex2">
-<h3>Ex2：钻石数据集<a class="headerlink" href="#ex2" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ex2">
+<h3>Ex2：钻石数据集<a class="headerlink" href="#ex2" title="Permalink to this heading">#</a></h3>
 <p>现有一份关于钻石的数据集，其中 <code class="docutils literal notranslate"><span class="pre">carat,</span> <span class="pre">cut,</span> <span class="pre">clarity,</span> <span class="pre">price</span></code> 分别表示克拉重量、切割质量、纯净度和价格，样例如下：</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [75]: </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/diamonds.csv&#39;</span><span class="p">)</span>
 
@@ -796,31 +841,40 @@
 <li><p>第4问中按照整数分箱得到的序列中，是否出现了所有的类别？如果存在没有出现的类别请把该类别删除。</p></li>
 <li><p>对第4问中按照分位数分箱得到的序列，求每个样本对应所在区间的左右端点值和长度。</p></li>
 </ol>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
-              </div>
+              </article>
               
+
               
-          </main>
+          </div>
           
-
       </div>
     </div>
 
-    
-  <script src="../_static/js/index.30270b6e4c972e43c488.js"></script>
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
 
-
-    <footer class="footer mt-5 mt-md-0">
-  <div class="container">
-    <p>
-          &copy; Copyright 2020, Datawhale, 耿远昊.<br/>
-        Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.2.1.<br/>
-    </p>
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2020-2022, Datawhale, 耿远昊.<br>
+</p>
   </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.0.2.<br>
+</p>
+  </div>
+  
+</div>
 </footer>
   </body>
 </html>
